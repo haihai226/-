@@ -6,6 +6,7 @@ on:
     branches:
       - main
     paths:
+      - "README.md"
       - "main.js"
       - "preload.js"
       - "renderer/**"
