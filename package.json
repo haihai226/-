@@ -1,0 +1,52 @@
+{
+  "name": "openclaw-portable-mac",
+  "version": "0.2.0",
+  "description": "macOS OpenClaw portable launcher",
+  "main": "main.js",
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "prepare:runtime": "node scripts/prepare-openclaw-runtime.mjs",
+    "dist:mac": "electron-builder --mac zip"
+  },
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "ai.openclaw.portable",
+    "productName": "OpenClaw Portable",
+    "artifactName": "OpenClaw-Portable-mac-${arch}-${version}.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "runtime",
+        "to": "runtime",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "identity": null
+    }
+  }
+}
