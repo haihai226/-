@@ -38,12 +38,7 @@
     ],
     "mac": {
       "target": [
-        {
-          "target": "zip",
-          "arch": [
-            "arm64"
-          ]
-        }
+        "zip"
       ],
       "category": "public.app-category.productivity",
       "identity": null
