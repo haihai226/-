@@ -1,0 +1,16 @@
+# 本项目的 docker compose。镜像 tag 锁死，见 docs/VERSIONS.md；不要改成 latest。
+# T0.2 只锁版本；数据卷、settings 生成、内网划分在 T2.1 完成。
+
+name: voice-tutor
+
+services:
+  deeptutor:
+    image: ghcr.io/hkuds/deeptutor:1.6.12
+    container_name: deeptutor
+    restart: unless-stopped
+    ports:
+      # 只绑本机。网页 3782；API 8001 暂时也绑本机，内网划分见 T2.1
+      - "127.0.0.1:3782:3782"
+      - "127.0.0.1:8001:8001"
+    volumes:
+      - ./deeptutor/data:/app/data

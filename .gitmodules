@@ -1,0 +1,3 @@
+[submodule "vendor/DeepTutor"]
+	path = vendor/DeepTutor
+	url = https://github.com/HKUDS/DeepTutor
