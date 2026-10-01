@@ -4,3 +4,4 @@
 
 | 日期 | 任务 | 分支 | 证据 | 未验证 |
 | --- | --- | --- | --- | --- |
+| 2026-10-01 | T0.1 | task/T0-1-skeleton | `uv sync && uv run pytest` 17 passed；`-m live` 0 个（17 deselected）；CI 绿（PR #1） | 无 |
